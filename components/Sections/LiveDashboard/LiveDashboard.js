@@ -7,8 +7,8 @@ export default function LiveDashboard() {
       <div className={styles.text}>
         <h1>Live Dashboard</h1>
         <p>
-          Keep track and view all aspects of your Bitcoin financing with our
-          seamless <span>LIVE DASHBOARD</span> experience.
+          Keep <span>TRACK</span> and view all aspects of your Bitcoin financing
+          with our seamless live dashboard experience.
         </p>
       </div>
       <div className={styles.image}>

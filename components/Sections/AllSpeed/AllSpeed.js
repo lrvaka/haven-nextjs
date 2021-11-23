@@ -16,9 +16,8 @@ export default function AllSpeed() {
       <div className={styles.text}>
         <h1>All the speed, with no fees</h1>
         <p>
-          <span>INSTANTANEOUS</span> transactions, withdrawals, loans, trades,
-          everything you need out of a fast customer-first experience with
-          <span>NO FEES</span>. We pay it all, transaction costs, taxes,
+          <span>INSTANTANEOUS</span> transactions with with
+          <span> NO FEES</span>, we cover it all, transaction costs, taxes,
           everything.
         </p>
       </div>

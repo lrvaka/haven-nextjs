@@ -11,12 +11,16 @@
   text-transform: uppercase;
   color: #ff9416;
   margin: 10rem 0 2rem 0;
-
 }
 
 .text > p {
   font-size: 2rem;
   text-align: left;
+}
+
+.text > p > span {
+  color: #f8e3b4;
+  font-weight: 800;
 }
 
 .image {
