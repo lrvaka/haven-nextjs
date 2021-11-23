@@ -1,0 +1,44 @@
+.buttonSectionContainer {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.buttonSection {
+  display: grid;
+  column-gap: 1rem;
+  text-align: center;
+  grid-auto-flow: column;
+  overflow-x: scroll;
+  grid-auto-columns: minmax(175px, 300px);
+}
+
+.slideButton {
+  background-color: transparent;
+  color: #f8e3b4;
+  padding: 0.5rem 0;
+  border-radius: 2rem;
+}
+
+.selected {
+  background-color: #f8e3b4;
+  color: #19191f71;
+}
+
+.slide {
+  display: grid;
+  padding: 0 6rem;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  grid-template-rows: repeat(6, 4rem);
+  color: white;
+}
+
+.slideImageContainer {
+  grid-column: 2 / span 6;
+  grid-row: 1;
+}
+
+.slide > p {
+  font-size: 2rem;
+  grid-column: 7 col-start / span 6;
+  grid-row: 3;
+}

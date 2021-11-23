@@ -1,0 +1,8 @@
+.whatWeDo > h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  color: #ff9416;
+}

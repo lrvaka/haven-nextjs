@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  margin-top: 1rem;
+  border-bottom: #f7e2b3 1px solid;
+}
+
+.header > nav {
+  align-self: center;
+  display: flex;
+  justify-content: space-around;
+  width: 15rem;
+}
+
+.login {
+  font-size: 1rem;
+  color: white;
+  background-color: transparent;
+  border-radius: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  outline: 1px solid #ff9416;
+}
+
+.register {
+  font-size: 1rem;
+  color: white;
+  background-color: #ff9416;
+  border-radius: 1.5rem;
+  padding: 0.75rem 1.5rem;
+}

@@ -1,0 +1,24 @@
+.liveDashboard {
+  display: flex;
+  overflow: visible;
+  margin: 10rem 0;
+}
+
+.text > h1 {
+  text-align: left;
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #ff9416;
+  margin: 10rem 0 2rem 0;
+
+}
+
+.text > p {
+  font-size: 2rem;
+  text-align: left;
+}
+
+.image {
+  margin-right: -40vw;
+}
