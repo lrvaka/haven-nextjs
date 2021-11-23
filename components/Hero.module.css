@@ -13,6 +13,7 @@
 }
 
 .hero > video {
+  background-color: rgba(36, 36, 36, 0.082);
   width: 100vw;
   height: 100vh;
   object-fit: cover;
@@ -36,7 +37,7 @@
 }
 
 .heroMessage > p {
-font-size: 2rem;
+  font-size: 2rem;
 }
 
 .heroMessage > h1 > span {

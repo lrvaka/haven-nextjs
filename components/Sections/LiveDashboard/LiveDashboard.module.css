@@ -23,6 +23,20 @@
   font-weight: 800;
 }
 
-.image {
+.laptopImage {
   margin-right: -40vw;
+}
+
+.lightMode {
+  border-radius: 3rem;
+  position: absolute;
+  transform: translate(12%, -107.5%);
+  overflow: hidden;
+}
+
+.darkMode {
+  border-radius: 3rem;
+  position: absolute;
+  transform: translate(12%, -107.5%);
+  overflow: hidden;
 }
