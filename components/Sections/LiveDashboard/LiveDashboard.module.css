@@ -27,16 +27,24 @@
   margin-right: -40vw;
 }
 
-.lightMode {
+.container {
+  border-radius: 3rem;
+  position: absolute;
+  transform: translate(12%, -107.5%);
+  overflow: scroll;
+  height: 37.2rem;
+}
+
+/* .lightMode {
   border-radius: 3rem;
   position: absolute;
   transform: translate(12%, -107.5%);
   overflow: hidden;
-}
+} */
 
 .darkMode {
   border-radius: 3rem;
   position: absolute;
-  transform: translate(12%, -107.5%);
+  transform: translate(0, -100%);
   overflow: hidden;
 }

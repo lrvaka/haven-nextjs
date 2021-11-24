@@ -8,7 +8,6 @@ export default function Header() {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-    console.log(offset);
     if (offset > 138) {
       setScrolled(true);
     } else {
