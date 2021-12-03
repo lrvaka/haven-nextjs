@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function AllSpeed() {
   return (
-    <div className={styles.allSpeed}>
+    <section className={styles.allSpeed}>
       <div className={styles.image}>
         <Image
           src="/images/All-Speed.svg"
@@ -21,6 +21,6 @@ export default function AllSpeed() {
           everything.
         </p>
       </div>
-    </div>
+    </section>
   );
 }

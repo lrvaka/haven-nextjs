@@ -41,7 +41,7 @@ export default function Hero() {
 
   return (
     <div className={styles.hero}>
-      <video autoplay="" muted="" loop>
+      <video autoPlay muted loop>
         <source src="/videos/Hero-Video.mp4" type="video/mp4" />
         <source src="/videos/Hero-Video.ogv" type="video/ogv" />
         <source src="/videos/Hero-Video.webm" type="video/webm" />
