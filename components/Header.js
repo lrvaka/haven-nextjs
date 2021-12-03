@@ -1,14 +1,18 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import useWindowSize from "../hooks/useWindowSize";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Header.module.css";
 
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const { height, width } = useWindowSize();
 
   const handleScroll = () => {
     const offset = window.scrollY;
-    if (offset > 138) {
+    if (offset > 800) {
       setScrolled(true);
     } else {
       setScrolled(false);
@@ -19,19 +23,34 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
   });
 
-  const stickyHead = `${styles.header} ${styles.scrolled}`;
+  const sticky = {
+    visible: {
+      y: 100,
+      opacity: 1,
+      transition: {
+        duration: 0.25,
+      },
+    },
+    hidden: {
+      y: 0,
+      opacity: 0,
+      transition: {
+        duration: 0.25,
+      },
+    },
+  };
 
-  let headerClasses = scrolled ? stickyHead : `${styles.header}`;
-
-  return (
-    <header className={headerClasses}>
+  const headerContent = (
+    <>
       <Image
         width={150}
         height={76}
         src="/images/haven-logo.png"
         alt="Haven for your value"
       />
-      <nav>
+      {height}
+      {width}
+      <nav className={styles.nav}>
         <Link href="/">
           <a className={styles.login}>Login</a>
         </Link>
@@ -49,6 +68,32 @@ export default function Header() {
           </a>
         </Link>
       </nav>
-    </header>
+    </>
+  );
+
+  const originalHeader = (
+    <div className={styles.headerContainer}>
+      <header className={styles.header}>{headerContent}</header>
+    </div>
+  );
+
+  const stickyHeader = (
+    <motion.header
+      animate={scrolled ? "visible" : "hidden"}
+      variants={sticky}
+      className={styles.sticky}
+    >
+      <motion.div className={styles.scrolledContent}>
+        {headerContent}
+      </motion.div>
+    </motion.header>
+  );
+
+  return (
+    <>
+      {/* In order to prevent the two divs from stacking when animation occurred, I changed the position of originalHeader to absolute*/}
+      {scrolled ? null : originalHeader}
+      {stickyHeader}
+    </>
   );
 }

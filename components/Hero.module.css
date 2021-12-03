@@ -3,13 +3,14 @@
   grid-template-columns: 1fr 0.75fr;
   grid-template-rows: 0.5fr 1fr 0.5fr;
   min-height: 100vh;
+  padding-top: 10rem;
+  text-align: center;
 }
 
 .heroImage {
-  animation: move 10s ease-in-out infinite;
   grid-column: 2;
   grid-row: 1 / 3;
-  padding-top: 8rem;
+  padding-top: 5rem;
 }
 
 .hero > video {
@@ -30,28 +31,19 @@
   grid-row: 2;
 }
 
-.heroMessage > h1 {
-  font-size: 3rem;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.heroMessage > p {
-  font-size: 2rem;
-}
-
 .heroMessage > h1 > span {
   color: #ff9416;
 }
 
-@keyframes move {
-  0% {
-    transform: translate(0, 0px);
+@media only screen and (max-width: 950px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
   }
-  50% {
-    transform: translate(0, -100px);
-  }
-  100% {
-    transform: translate(0, 0px);
+
+  .heroImage {
+    padding-top: 1rem;
+    max-width: 500px;
+    align-self: center;
   }
 }

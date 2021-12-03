@@ -1,6 +1,9 @@
 import classes from "./Carousel.module.css";
-import { useState } from "react";
+import systemStyles from "../../../styles/utils.module.css";
+import { useState, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { useEffect } from "react";
 
 const DUMMY_BUTTONS = [
   { title: "All-in-one" },
@@ -37,12 +40,25 @@ const DUMMY_SLIDES = [
 
 export default function Carousel() {
   const [selectedSlide, setSelectedSlide] = useState(0); // we start at the first slide of carousel
-
-  const selectSlideHandler = (index) => {
-    setSelectedSlide(index);
-  };
-
   let slideButtonClasses = `${classes.slideButton}`;
+  const slideRefs = useRef([]);
+
+  useEffect(() => {
+    slideRefs.current = slideRefs.current.slice(0, DUMMY_BUTTONS.length);
+  }, []);
+
+  const slideChangeHandler = (index) => {
+    setSelectedSlide(index);
+    if (typeof window !== "undefined") {
+      slideRefs.current[index].scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest",
+        // set a custom duration used by the polyfill
+        duration: 150,
+      });
+    }
+  };
 
   const SlideButtons = (
     <div className={classes.buttonSectionContainer}>
@@ -51,14 +67,15 @@ export default function Carousel() {
           if (selectedSlide === index) {
             slideButtonClasses = `${classes.slideButton} ${classes.selected}`;
           } else {
-            slideButtonClasses = `${classes.slideButton}`;
+            slideButtonClasses = classes.slideButton;
           }
 
           return (
             <button
               className={slideButtonClasses}
               key={index}
-              onClick={() => selectSlideHandler(index)}
+              ref={(el) => (slideRefs.current[index] = el)}
+              onClick={() => slideChangeHandler(index)}
             >
               {e.title}
             </button>
@@ -69,17 +86,28 @@ export default function Carousel() {
   );
 
   const Slide = (
-    <div className={classes.slide}>
-      <div className={classes.slideImageContainer}>
-        <Image
-          src={DUMMY_SLIDES[selectedSlide].image}
-          alt="everything you need in one place"
-          height={450}
-          width={350}
-        />
-      </div>
-      <p>{DUMMY_SLIDES[selectedSlide].description}</p>
-    </div>
+    <AnimatePresence exitBeforeEnter>
+      <motion.div
+        className={classes.slide}
+        key={selectedSlide ? selectedSlide : "Nothing"}
+        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 20 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.15 }}
+      >
+        <div className={classes.slideImageContainer}>
+          <Image
+            src={DUMMY_SLIDES[selectedSlide].image}
+            alt="everything you need in one place"
+            height={450}
+            width={350}
+          />
+        </div>
+        <p className={systemStyles.paragraph}>
+          {DUMMY_SLIDES[selectedSlide].description}
+        </p>
+      </motion.div>
+    </AnimatePresence>
   );
 
   return (

@@ -1,4 +1,5 @@
 import styles from "./ThreePillars.module.css";
+import systemStyles from '../../../styles/utils.module.css'
 
 const DUMMY_CARDS = [
   {
@@ -32,7 +33,7 @@ export default function ThreePillars() {
   );
   return (
     <section className={styles.threePillars}>
-      <h1>Havens Three Pillars</h1>
+      <h1 className={systemStyles.heading}>Havens Three Pillars</h1>
       {ThreeCards}
     </section>
   );

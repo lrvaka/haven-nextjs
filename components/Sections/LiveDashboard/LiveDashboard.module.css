@@ -1,21 +1,16 @@
 .liveDashboard {
   display: flex;
-  overflow: visible;
   margin: 10rem 0;
 }
 
-.text > h1 {
+.text {
+  align-self: center;
   text-align: left;
-  font-size: 3rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  color: #ff9416;
-  margin: 10rem 0 2rem 0;
 }
 
-.text > p {
-  font-size: 2rem;
-  text-align: left;
+.text > h1 {
+  color: #ff9416;
+  margin: 0 0 2rem 0;
 }
 
 .text > p > span {
@@ -23,28 +18,32 @@
   font-weight: 800;
 }
 
-.laptopImage {
-  margin-right: -40vw;
+.colorModes {
+  align-self: center;
+  position: relative;
+  overflow-y: hidden;
+  margin-right: -50vw;
 }
 
-.container {
-  border-radius: 3rem;
+
+.mask {
   position: absolute;
-  transform: translate(12%, -107.5%);
-  overflow: scroll;
-  height: 37.2rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
 }
 
-/* .lightMode {
-  border-radius: 3rem;
-  position: absolute;
-  transform: translate(12%, -107.5%);
-  overflow: hidden;
-} */
+@media only screen and (max-width: 620px) {
+  .liveDashboard {
+    flex-direction: column;
+  }
+  .colorModes {
+    margin-right: 0;
+  }
 
-.darkMode {
-  border-radius: 3rem;
-  position: absolute;
-  transform: translate(0, -100%);
-  overflow: hidden;
+  .text {
+    text-align: center;
+  }
 }

@@ -3,27 +3,37 @@
   overflow: visible;
 }
 
-.text > h1 {
-  text-align: center;
-  font-size: 3rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  color: #ff9416;
-  margin: 10rem 0 2rem 0;
+.text {
+  align-self: center;
   text-align: right;
 }
 
-.text > p {
-  font-size: 2rem;
-  text-align: right;
+.text > h1 {
+  color: #ff9416;
+  margin: 0 0 2rem 0;
 }
 
 .image {
   transform: scaleX(-1);
-  margin-left: -40vw;
+  margin-left: -50vw;
 }
 
 .text > p > span {
-    color: #f8e3b4;
-    font-weight: 800;
+  color: #f8e3b4;
+  font-weight: 800;
+}
+
+@media only screen and (max-width: 620px) {
+  .allSpeed {
+    flex-direction: column;
+  }
+  .image {
+    order: 2;
+    margin-left: 0;
+    align-self: center;
+  }
+
+  .text {
+    text-align: center;
+  }
 }

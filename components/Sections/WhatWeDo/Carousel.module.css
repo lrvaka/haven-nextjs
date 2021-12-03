@@ -1,7 +1,9 @@
 .buttonSectionContainer {
-  width: 70%;
+  max-width: 700px;
   margin: 0 auto;
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
 
 .buttonSection {
   display: grid;
@@ -9,7 +11,15 @@
   text-align: center;
   grid-auto-flow: column;
   overflow-x: scroll;
-  grid-auto-columns: minmax(175px, 300px);
+  grid-auto-columns: minmax(155px, 300px);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.buttonSection::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+  display: none;
 }
 
 .slideButton {
@@ -26,19 +36,70 @@
 
 .slide {
   display: grid;
-  padding: 0 6rem;
   grid-template-columns: repeat(12, [col-start] 1fr);
-  grid-template-rows: repeat(6, 4rem);
   color: white;
 }
 
 .slideImageContainer {
-  grid-column: 2 / span 6;
+  grid-column: 3 / span 6;
   grid-row: 1;
 }
 
 .slide > p {
-  font-size: 2rem;
-  grid-column: 7 col-start / span 6;
-  grid-row: 3;
+  grid-column: 7 col-start / span 5;
+  grid-row: 1;
+  padding-top: 10rem;
+}
+
+@media only screen and (max-width: 1110px) {
+  .slideImageContainer {
+    grid-column: 2 / span 6;
+  }
+
+  .slide > p {
+    grid-column: 7 col-start / span 6;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .slideImageContainer {
+    grid-column: 1 / span 6;
+  }
+
+  .slide > p {
+    grid-column: 7 col-start / span 9;
+  }
+}
+
+@media only screen and (max-width: 775px) {
+  .slideImageContainer {
+    grid-column: 1 / span 5;
+  }
+
+  .slide > p {
+    grid-column: 7 col-start / span 11;
+    padding-top: 5rem;
+    font-size: 1.25rem;
+  }
+}
+
+@media only screen and (max-width: 525px) {
+  .slide {
+    grid-template-columns: repeat(6, [col-start] 1fr);
+  }
+  .slideImageContainer {
+    grid-column: 2 / span 4;
+    grid-row: 2;
+  }
+
+  .slide > p {
+    text-align: center;
+    grid-column: 1 col-start / span 6;
+    grid-row: 1;
+    padding-top: 0;
+    margin-bottom: 5%;
+  }
+  .buttonSectionContainer {
+    margin-bottom: 2rem;
+  }
 }
