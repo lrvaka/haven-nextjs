@@ -16,16 +16,21 @@ export default function LiveDashboard() {
   //scrollYProgress tracks the value of component not the entire application -
   // CHANGE HEADER! Updating state that often will cause app to be slow, probably
   const { scrollYProgress } = useViewportScroll();
-  const { width } = useWindowSize();
+  const { width, height } = useWindowSize();
 
   useEffect(() => {
+    if (width < 430 && height < 930) {
+      setRange({ low: 0.8, high: 0.95 });
+    } else {
+      setRange({ low: 0.7, high: 0.9 });
+    }
 
-    console.log(scrollYProgress.current)
-  }, [width, scrollYProgress]);
+    console.log(scrollYProgress.current);
+  }, [width, height, scrollYProgress]);
 
   //useTransform, based off scrollYProgress - when 65% of the component is in viewport, begin changing height - 0
   // complete the changing of height once 72% has been reached - 595
-  const height = useTransform(
+  const maskHeight = useTransform(
     scrollYProgress,
     [range.low, range.high],
     [0, IMG_HEIGHT]
@@ -50,7 +55,7 @@ export default function LiveDashboard() {
           />
         </div>
         {/* this is the framer motion div being animated through the style attribute - height */}
-        <motion.div className={styles.mask} style={{ height }}>
+        <motion.div className={styles.mask} style={{ height: maskHeight }}>
           <div className={styles.darkMode}>
             <Image
               width={IMG_WIDTH}
