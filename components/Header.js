@@ -1,14 +1,20 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useViewportScroll, useTransform } from "framer-motion";
 import useWindowSize from "../hooks/useWindowSize";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Header.module.css";
 
-
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const { scrollYProgress } = useViewportScroll();
   const { height, width } = useWindowSize();
+
+  const y = useTransform(
+    scrollYProgress,
+    [0, 0.3, 0.4],
+    ["0%", "0%", "100%"]
+  );
 
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -79,8 +85,9 @@ export default function Header() {
 
   const stickyHeader = (
     <motion.header
-      animate={scrolled ? "visible" : "hidden"}
-      variants={sticky}
+      // animate={scrolled ? "visible" : "hidden"}
+      // variants={sticky}
+      style={{ y }}
       className={styles.sticky}
     >
       <motion.div className={styles.scrolledContent}>
@@ -92,7 +99,7 @@ export default function Header() {
   return (
     <>
       {/* In order to prevent the two divs from stacking when animation occurred, I changed the position of originalHeader to absolute*/}
-      {scrolled ? null : originalHeader}
+      {originalHeader}
       {stickyHeader}
     </>
   );
