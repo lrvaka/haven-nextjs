@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import useWindowSize from "../hooks/useWindowSize";
 import Link from "next/link";
@@ -6,45 +5,14 @@ import Image from "next/image";
 import styles from "./Header.module.css";
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const { scrollYProgress } = useViewportScroll();
   const { height, width } = useWindowSize();
 
   const y = useTransform(
     scrollYProgress,
     [0, 0.3, 0.4, 1],
-    ["0%", "0%", "100%", "100%"]
+    ["-100%", "-100%", "0%", "0%"]
   );
-
-  const handleScroll = () => {
-    const offset = window.scrollY;
-    if (offset > 800) {
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-  });
-
-  const sticky = {
-    visible: {
-      y: 100,
-      opacity: 1,
-      transition: {
-        duration: 0.25,
-      },
-    },
-    hidden: {
-      y: 0,
-      opacity: 0,
-      transition: {
-        duration: 0.25,
-      },
-    },
-  };
 
   const headerContent = (
     <>
@@ -84,12 +52,7 @@ export default function Header() {
   );
 
   const stickyHeader = (
-    <motion.header
-      // animate={scrolled ? "visible" : "hidden"}
-      // variants={sticky}
-      style={{ y }}
-      className={styles.sticky}
-    >
+    <motion.header style={{ y }} className={styles.sticky}>
       <motion.div className={styles.scrolledContent}>
         {headerContent}
       </motion.div>

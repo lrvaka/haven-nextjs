@@ -29,7 +29,6 @@
 .sticky {
   /* background-color: #ff921617; */
   margin-top: 0;
-  bottom: 100vh;
   position: fixed;
   z-index: 2;
   left: 0;
