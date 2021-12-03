@@ -1,12 +1,14 @@
+html {
+  background-color: #000000;
+}
+
 html,
 body {
-  background-color: rgba(36, 36, 36, 0.082);
   padding: 0;
   margin: 0;
   font-family: "Montserrat", sans-serif;
   color: white;
   overflow-x: hidden;
-  overscroll-behavior: none;
 }
 
 button,

@@ -13,7 +13,7 @@ export default function Hero() {
       y: 0,
       opacity: 1,
       transition: {
-        y: { type: "spring", stiffness: 500},
+        y: { type: "spring", stiffness: 500 },
         delay: 1,
       },
     },
@@ -41,7 +41,13 @@ export default function Hero() {
 
   return (
     <div className={styles.hero}>
-      <video autoPlay muted loop>
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline="true"
+        disablePictureInPicture="true"
+      >
         <source src="/videos/Hero-Video.mp4" type="video/mp4" />
         <source src="/videos/Hero-Video.ogv" type="video/ogv" />
         <source src="/videos/Hero-Video.webm" type="video/webm" />
