@@ -12,8 +12,8 @@ export default function Header() {
 
   const y = useTransform(
     scrollYProgress,
-    [0, 0.3, 0.4],
-    ["0%", "0%", "100%"]
+    [0, 0.3, 0.4, 1],
+    ["0%", "0%", "100%", "100%"]
   );
 
   const handleScroll = () => {
