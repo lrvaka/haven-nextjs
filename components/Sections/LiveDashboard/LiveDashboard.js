@@ -10,8 +10,8 @@ const IMG_WIDTH = 3105;
 
 export default function LiveDashboard() {
   const [range, setRange] = useState({
-    low: 0.7,
-    high: 0.9,
+    low: 0.65,
+    high: 0.85,
   });
   //scrollYProgress tracks the value of component not the entire application -
   // CHANGE HEADER! Updating state that often will cause app to be slow, probably
@@ -20,9 +20,9 @@ export default function LiveDashboard() {
 
   useEffect(() => {
     if (width < 430 && height < 930) {
-      setRange({ low: 0.8, high: 0.95 });
+      setRange({ low: 0.85, high: 1 });
     } else {
-      setRange({ low: 0.7, high: 0.9 });
+      setRange({ low: 0.65, high: 0.85 });
     }
 
     console.log(scrollYProgress.current);
