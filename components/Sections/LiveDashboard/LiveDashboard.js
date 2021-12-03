@@ -19,13 +19,6 @@ export default function LiveDashboard() {
   const { width } = useWindowSize();
 
   useEffect(() => {
-    if (width > 690 && width <= 1100) {
-      setRange({ low: -2, high: -2.5 });
-    } else if (width < 690 && width > 525) {
-      setRange({low: -1.82, high: -2.3})
-    } else {
-      setRange({ low: -2.2, high: -2.6 });
-    }
 
     console.log(scrollYProgress.current)
   }, [width, scrollYProgress]);
