@@ -10,7 +10,7 @@ export default function Header() {
 
   const y = useTransform(
     scrollYProgress,
-    [0, 0.3, 0.4, 1],
+    [0, 0.3, 0.32, 1],
     ["-100%", "-100%", "0%", "0%"]
   );
 
@@ -47,7 +47,7 @@ export default function Header() {
 
   const originalHeader = (
     <div className={styles.headerContainer}>
-      <header className={styles.header}>{headerContent}</header>
+      <header className={styles.mainHeader}>{headerContent}</header>
     </div>
   );
 
@@ -62,8 +62,8 @@ export default function Header() {
   return (
     <>
       {/* In order to prevent the two divs from stacking when animation occurred, I changed the position of originalHeader to absolute*/}
-      {originalHeader}
       {stickyHeader}
+      {originalHeader}
     </>
   );
 }

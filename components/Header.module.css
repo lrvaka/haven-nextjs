@@ -1,9 +1,4 @@
-.headerContainer {
-  position: absolute;
-  left: 0;
-  right: 0;
-  width: 100%;
-}
+
 
 .scrolledContent {
   max-width: 1200px;
@@ -13,8 +8,8 @@
   padding: 1rem 0;
 }
 
-.header {
-  position: absolute;
+.mainHeader {
+  position: relative;
   margin: 0 auto;
   left: 0;
   right: 0;
@@ -22,19 +17,16 @@
   display: flex;
   justify-content: space-between;
   padding: 1rem 0;
-  margin-top: 1rem;
   border-bottom: #f7e2b3 1px solid;
 }
 
 .sticky {
-  /* background-color: #ff921617; */
   margin-top: 0;
   position: fixed;
   z-index: 2;
   left: 0;
   right: 0;
   border-bottom: none;
-  /* background-color: rgba(0, 0, 0, 0.5); */
   -webkit-box-shadow: inset 0px 50px 50px -23px #4d3009;
   box-shadow: inset 0px 50px 50px -23px #4d3009;
 }

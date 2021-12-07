@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr 0.75fr;
   grid-template-rows: 0.5fr 1fr;
-  padding-top: 10rem;
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
