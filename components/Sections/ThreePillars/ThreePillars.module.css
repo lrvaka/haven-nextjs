@@ -1,17 +1,28 @@
+.threePillars {
+  max-width: 1100px;
+  margin: 5vh auto 0 auto;
+}
+
 .threePillars > h1 {
   text-align: center;
-  margin: 10rem 0 2rem 0;
+  margin: 0 0 2rem 0;
   color: #ff9416;
 }
 
 .threeCards {
   display: grid;
   grid-auto-flow: column;
+  gap: 3vw;
 }
 
 .card {
   display: grid;
   grid-template-columns: 0.4fr 1fr;
+  grid-template-rows: 0.6fr 1fr;
+  background-color: #080808;
+  border-radius: 1rem;
+  padding: 1vw;
+  text-align: center;
 }
 
 .card > h2 {
@@ -29,31 +40,20 @@
   grid-row: 2;
 }
 
-@media only screen and (max-width: 740px) {
-  .card > h2 {
-    font-size: 1rem;
+@media only screen and (max-width: 780px) {
+  .threeCards {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 5vw;
+  }
+  .card {
+    display: grid;
+    grid-template-columns: 0.1fr 1fr;
+    grid-template-rows: 0.7fr 1fr;
   }
 
-  .card > h3 {
-    font-size: 3rem;
-  }
-
-  .card > p {
-    font-size: 0.75rem;
-  }
-}
-
-
-@media only screen and (max-width: 532px) {
-  .card > h2 {
-    font-size: 0.75rem;
-  }
-
-  .card > h3 {
-    font-size: 1.8rem;
-  }
-
-  .card > p {
-    font-size: 0.55rem;
+  .card {
+    text-align: center;
   }
 }
+

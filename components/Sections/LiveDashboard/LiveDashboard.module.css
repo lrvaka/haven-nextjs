@@ -1,11 +1,27 @@
-.liveDashboard {
+.liveDashboardSection {
+  position: relative;
+  margin-top: 5vh;
+  padding: 5vh;
+}
+
+.liveDashboardContainer {
+  position: relative;
+  max-width: 80vw;
+  margin: 0 auto;
+  overflow-x: hidden;
+  background-color: rgb(8, 8, 8);
+  border-radius: 2vw;
+  padding: 5%;
+}
+
+.liveDashboardItems {
   display: flex;
-  margin: 10rem 0;
 }
 
 .text {
+  position: relative;
   align-self: center;
-  text-align: left;
+  text-align: center;
 }
 
 .text > h1 {
@@ -19,12 +35,12 @@
 }
 
 .colorModes {
-  align-self: center;
   position: relative;
   overflow-y: hidden;
-  margin-right: -50vw;
+  align-self: center;
+  margin-right: -40vw;
+  max-width: 1900px;
 }
-
 
 .mask {
   position: absolute;
@@ -35,8 +51,17 @@
   overflow: hidden;
 }
 
-@media only screen and (max-width: 620px) {
-  .liveDashboard {
+@media only screen and (max-width: 914px) {
+  .liveDashboardSection {
+    margin-top: 5vh;
+    padding: 0vw;
+  }
+  .liveDashboardContainer {
+    max-width: 95vw;
+    padding: 1%;
+    margin: 0 auto;
+  }
+  .liveDashboardItems {
     flex-direction: column;
   }
   .colorModes {
@@ -45,5 +70,13 @@
 
   .text {
     text-align: center;
+  }
+
+  .text > h1 {
+    margin-bottom: 1rem;
+  }
+
+  .text > p {
+    margin-bottom: 1rem;
   }
 }

@@ -1,11 +1,25 @@
-.allSpeed {
+.allSpeedSection {
+  position: relative;
+  padding: 5vh;
+}
+
+.allSpeedContainer {
+  position: relative;
+  max-width: 80vw;
+  margin: 0 auto;
+  overflow-x: hidden;
+  background-color: rgb(8, 8, 8);
+  border-radius: 2vw;
+  padding: 5%;
+}
+
+.allSpeedItems {
   display: flex;
-  overflow: visible;
 }
 
 .text {
   align-self: center;
-  text-align: right;
+  text-align: center;
 }
 
 .text > h1 {
@@ -14,8 +28,12 @@
 }
 
 .image {
+  position: relative;
+  overflow-y: hidden;
+  align-self: center;
   transform: scaleX(-1);
-  margin-left: -50vw;
+  margin-left: -40vw;
+  max-width: 1900px;
 }
 
 .text > p > span {
@@ -23,8 +41,17 @@
   font-weight: 800;
 }
 
-@media only screen and (max-width: 620px) {
-  .allSpeed {
+@media only screen and (max-width: 914px) {
+  .allSpeedSection {
+    padding: 0vw;
+    margin-top: 5vh;
+  }
+  .allSpeedContainer {
+    max-width: 95vw;
+    padding: 1%;
+    margin: 0 auto;
+  }
+  .allSpeedItems {
     flex-direction: column;
   }
   .image {
@@ -35,5 +62,13 @@
 
   .text {
     text-align: center;
+  }
+
+  .text > h1 {
+    margin-bottom: 1rem;
+  }
+
+  .text > p {
+    margin-bottom: 1rem;
   }
 }
