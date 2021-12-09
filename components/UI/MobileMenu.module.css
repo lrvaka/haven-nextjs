@@ -1,0 +1,7 @@
+.mobileMenuContainer {
+  border-radius: 100%;
+  padding: 0.5rem;
+  display: flex;
+  background-color: orange;
+  align-items: center;
+}

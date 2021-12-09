@@ -1,5 +1,6 @@
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import useWindowSize from "../hooks/useWindowSize";
+import MobileMenu from "./UI/MobileMenu";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Header.module.css";
@@ -25,6 +26,7 @@ export default function Header() {
       {height}
       {width}
       <nav className={styles.nav}>
+        <MobileMenu />
         <Link href="/">
           <a className={styles.login}>Login</a>
         </Link>
