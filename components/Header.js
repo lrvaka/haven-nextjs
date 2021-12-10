@@ -85,7 +85,7 @@ export default function Header() {
                 alt="Register now"
               />
             </div>
-            Register
+            Sign Up
           </a>
         </Link>
       </nav>
