@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import useWindowSize from "../hooks/useWindowSize";
 import MobileMenu from "./UI/MobileMenu";
@@ -6,14 +7,30 @@ import Image from "next/image";
 import styles from "./Header.module.css";
 
 export default function Header() {
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const { scrollYProgress } = useViewportScroll();
-  const { height, width } = useWindowSize();
+  const { width } = useWindowSize();
 
   const y = useTransform(
     scrollYProgress,
-    [0, 0.3, 0.32, 1],
-    ["-100%", "-100%", "0%", "0%"]
+    [0, 0.3, 0.35, 1],
+    ["-200%", "-200%", "0%", "0%"]
   );
+
+  const variants = {
+    open: { y: 0, opacity: 1 },
+    closed: { y: -10, opacity: 0 },
+  };
+
+  useEffect(() => {
+    if (width <= 750) {
+      setShowMobileMenu(true);
+    } else {
+      setShowMobileMenu(false);
+      setIsOpen(false);
+    }
+  }, [width]);
 
   const headerContent = (
     <>
@@ -23,10 +40,38 @@ export default function Header() {
         src="/images/haven-logo.png"
         alt="Haven for your value"
       />
-      {height}
-      {width}
+      {showMobileMenu ? (
+        <MobileMenu setIsOpen={setIsOpen} isOpen={isOpen} />
+      ) : (
+        <nav className={styles.nav}>
+          <Link href="/">
+            <a className={styles.login}>Login</a>
+          </Link>
+          <Link href="/">
+            <a className={styles.register}>
+              <div>
+                <Image
+                  width={15}
+                  height={15}
+                  src="/images/Register-Icon.png"
+                  alt="Register now"
+                />
+              </div>
+              Register
+            </a>
+          </Link>
+        </nav>
+      )}
+    </>
+  );
+
+  const mobileMenuDropdown = (
+    <motion.div
+      animate={isOpen ? "open" : "closed"}
+      variants={variants}
+      className={styles.overlay}
+    >
       <nav className={styles.nav}>
-        <MobileMenu />
         <Link href="/">
           <a className={styles.login}>Login</a>
         </Link>
@@ -44,20 +89,22 @@ export default function Header() {
           </a>
         </Link>
       </nav>
-    </>
+    </motion.div>
   );
 
   const originalHeader = (
-    <div className={styles.headerContainer}>
+    <>
       <header className={styles.mainHeader}>{headerContent}</header>
-    </div>
+      {showMobileMenu ? mobileMenuDropdown : null}
+    </>
   );
 
   const stickyHeader = (
-    <motion.header style={{ y }} className={styles.sticky}>
+    <motion.header className={styles.sticky} style={{ y }}>
       <motion.div className={styles.scrolledContent}>
         {headerContent}
       </motion.div>
+      {showMobileMenu ? mobileMenuDropdown : null}
     </motion.header>
   );
 

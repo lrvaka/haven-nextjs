@@ -1,5 +1,3 @@
-
-
 .scrolledContent {
   max-width: 1200px;
   display: flex;
@@ -10,9 +8,11 @@
 
 .mainHeader {
   position: relative;
+  z-index: 100;
   margin: 0 auto;
   left: 0;
   right: 0;
+  background-color: black;
   max-width: 1200px;
   display: flex;
   justify-content: space-between;
@@ -21,9 +21,10 @@
 }
 
 .sticky {
+  padding: 0 1rem;
   margin-top: 0;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   left: 0;
   right: 0;
   border-bottom: none;
@@ -36,6 +37,19 @@
   display: flex;
   justify-content: space-around;
   width: 16rem;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  background-color: #282828;
+  border-radius: 1rem;
 }
 
 .login {
@@ -72,5 +86,12 @@
 
   to {
     transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .mainHeader {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
