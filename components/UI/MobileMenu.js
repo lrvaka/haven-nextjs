@@ -9,6 +9,7 @@ export default function MobileMenu({ setIsOpen, isOpen }) {
     open: { rotate: 180 },
     closed: { rotate: 0 },
   };
+
   return (
     <motion.div
       className={styles.mobileMenuContainer}

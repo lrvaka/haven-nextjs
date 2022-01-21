@@ -44,7 +44,7 @@ export default function Header() {
         <MobileMenu setIsOpen={setIsOpen} isOpen={isOpen} />
       ) : (
         <nav className={styles.nav}>
-          <Link href="/">
+          <Link href="/user-login">
             <a className={styles.login}>Login</a>
           </Link>
           <Link href="/">

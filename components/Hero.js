@@ -40,45 +40,47 @@ export default function Hero() {
   };
 
   return (
-    <div className={styles.hero}>
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline="true"
-        disablePictureInPicture="true"
-      >
-        <source src="/videos/Hero-Video.mp4" type="video/mp4" />
-        <source src="/videos/Hero-Video.ogv" type="video/ogv" />
-        <source src="/videos/Hero-Video.webm" type="video/webm" />
-      </video>
-      <motion.div
-        className={styles.heroMessage}
-        variants={text}
-        initial="hidden"
-        animate="show"
-      >
-        <motion.h1 variants={item} className={systemStyles.heading}>
-          <span>Bitcoin</span>, value by the many for the many
-        </motion.h1>
-        <motion.p variants={item} className={systemStyles.paragraph}>
-          Offering the best solutions to create and store your wealth, for
-          everyone
-        </motion.p>
-      </motion.div>
-      <motion.div
-        className={styles.heroImage}
-        variants={coin}
-        initial="hidden"
-        animate="show"
-      >
-        <Image
-          width={800}
-          height={907}
-          src="/images/3D-Coin.svg"
-          alt="Haven for your value"
-        />
-      </motion.div>
+    <div className={styles.heroContainer}>
+      <div className={styles.hero}>
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline={true}
+          disablePictureInPicture={true}
+        >
+          <source src="/videos/Hero-Video.mp4" type="video/mp4" />
+          <source src="/videos/Hero-Video.ogv" type="video/ogv" />
+          <source src="/videos/Hero-Video.webm" type="video/webm" />
+        </video>
+        <motion.div
+          className={styles.heroMessage}
+          variants={text}
+          initial="hidden"
+          animate="show"
+        >
+          <motion.h1 variants={item} className={systemStyles.heading}>
+            <span>Bitcoin</span>, value by the many for the many
+          </motion.h1>
+          <motion.p variants={item} className={systemStyles.paragraph}>
+            Offering the best solutions to create and store your wealth, for
+            everyone
+          </motion.p>
+        </motion.div>
+        <motion.div
+          className={styles.heroImage}
+          variants={coin}
+          initial="hidden"
+          animate="show"
+        >
+          <Image
+            width={800}
+            height={907}
+            src="/images/3D-Coin.svg"
+            alt="Haven for your value"
+          />
+        </motion.div>
+      </div>
     </div>
   );
 }
