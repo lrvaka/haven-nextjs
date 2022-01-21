@@ -47,7 +47,7 @@ export default function Header() {
           <Link href="/user-login">
             <a className={styles.login}>Login</a>
           </Link>
-          <Link href="/">
+          <Link href="/sign-up">
             <a className={styles.register}>
               <div>
                 <Image

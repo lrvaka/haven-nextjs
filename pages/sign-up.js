@@ -1,5 +1,5 @@
 import LoginAndSignUp from "../components/LoginAndSignUp/LoginAndSignUp";
 
-export default function UserLogin() {
-  return <LoginAndSignUp login/>;
+export default function SignUp() {
+  return <LoginAndSignUp />;
 }

@@ -1,10 +1,10 @@
 import styles from "./LoginAndSignUp.module.css";
 
-export default function LoginAndSignUp() {
+export default function LoginAndSignUp({login}) {
   return (
     <div className={styles.container}>
       <div className={styles.LoginAndSignUp}>
-        login (probably through props) ? LoginSection : SignUpSection
+      {login ? "login page" : "sign up page"}
       </div>
     </div>
   );
