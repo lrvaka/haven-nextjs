@@ -12,12 +12,10 @@
   margin: 0 auto;
   left: 0;
   right: 0;
-  background-color: black;
   max-width: 1200px;
   display: flex;
   justify-content: space-between;
-  padding: 1rem 0;
-  border-bottom: #f7e2b3 1px solid;
+  padding-top: 3rem;
 }
 
 .sticky {
