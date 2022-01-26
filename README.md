@@ -1,4 +1,4 @@
-#🚧 UNDER CONSTRUCTION 🚧
+# 🚧 UNDER CONSTRUCTION 🚧
 
 As a supporter of the ideas of Bitcoin and its potential uses, I've created a mock Bitcoin finance consulting website using Next.JS
 
