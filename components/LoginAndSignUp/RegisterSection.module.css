@@ -1,5 +1,5 @@
-.container {
-  width: 50%;
+.registerSection {
+
 }
 
 .username {
@@ -119,6 +119,10 @@
   margin: 1rem 0;
 }
 
+.headings > h1 > span {
+  color: #ff9416;
+}
+
 .headings > p > span {
   color: #f8e3b4;
 }
@@ -128,4 +132,11 @@
   padding: 0.75rem 1.5rem;
   border-radius: 1.5rem;
   font-weight: 500;
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(246, 226, 181, 0.25);
+  box-shadow: 0px 0px 15px 5px rgba(246, 227, 181, 0.05);
+  transition: 0.3s;
+}
+
+.register > button:hover {
+  background-color: #bb6d13;
 }

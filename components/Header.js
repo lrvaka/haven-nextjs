@@ -72,10 +72,10 @@ export default function Header() {
       className={styles.overlay}
     >
       <nav className={styles.nav}>
-        <Link href="/">
+        <Link href="/login">
           <a className={styles.login}>Login</a>
         </Link>
-        <Link href="/">
+        <Link href="/register">
           <a className={styles.register}>
             <div>
               <Image
