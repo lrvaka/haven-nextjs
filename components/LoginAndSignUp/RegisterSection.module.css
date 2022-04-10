@@ -1,6 +1,8 @@
-.registerSection {
-
-}
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  }
 
 .username {
   display: flex;
@@ -116,6 +118,7 @@
 }
 
 .headings > h1 {
+    font-size: 1.75rem;
   margin: 1rem 0;
 }
 

@@ -1,0 +1,16 @@
+.footer {
+  background-color: black;
+  height: 150px;
+}
+
+.contentContainer {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+.socialsIconContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
