@@ -32,7 +32,7 @@ export default function LoginSection() {
         </div>
       </form>
       <p>
-        Don't have an account?
+        Don&apos;t have an account?
         <span>
           <Link href="/register">
             <a> Register</a>
